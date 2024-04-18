@@ -6,6 +6,18 @@ images:
   newTag: abcdefg
 resources:
 - ../../base
-patchesStrategicMerge:
-- front-deployment-patch.yaml
-- front-service-patch.yaml
+patches:
+- path: front-deployment-patch.yaml
+  target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: demo-frontend
+    namespace: default
+- path: front-service-patch.yaml
+  target:
+    group: ""
+    version: v1
+    kind: Service
+    name: demo-frontend
+    namespace: default
