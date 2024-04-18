@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: module1
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: module1
+  template:
+    metadata:
+      labels:
+        app: module1
+    spec:
+      containers:
+        - name: module1
+          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/msa-test:msa_module1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

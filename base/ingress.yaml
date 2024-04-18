@@ -1,0 +1,55 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "unified-ingress"
+  namespace: default
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: eks-demo-group
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:227250033304:certificate/19bbbf4c-3590-410a-8ec4-64b387e53b12
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+spec:
+  ingressClassName: alb
+  tls:
+  - hosts:
+    - www.dangnagwi.store
+    secretName: tls-crt
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: "front"
+            port:
+              number: 8080
+      - path: /module1
+        pathType: Prefix
+        backend:
+          service:
+            name: "module1"
+            port:
+              number: 8080
+      - path: /module2
+        pathType: Prefix
+        backend:
+          service:
+            name: "module2"
+            port:
+              number: 8080
+  - host: www.dangnagwi.store
+    http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: "front"
+            port:
+              number: 8080
+
+
