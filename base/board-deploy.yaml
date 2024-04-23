@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: board
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: board
+  template:
+    metadata:
+      labels:
+        app: board
+    spec:
+      containers:
+        - name: board
+          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/demo-testrepo/my-spring-app
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: board
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: "/"
+spec:
+  selector:
+    app: board
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
