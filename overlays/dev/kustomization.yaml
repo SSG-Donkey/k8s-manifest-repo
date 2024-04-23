@@ -6,7 +6,7 @@ images:
   newTag: abcdefg
 - name: donkey-app
   newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-app
-  newTag: c5af31353cca9ea9923ec5649a759c0fddbae63c
+  newTag: 3810e543e452810f73a7e9d3119e19665597f655
 resources:
 - ../../base
 patches:
