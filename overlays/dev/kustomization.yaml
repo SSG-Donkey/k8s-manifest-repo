@@ -1,12 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
-- name: demo-frontend # 이미 기존에 있던 이미지 설정
+- name: demo-frontend
   newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/demo-frontend
   newTag: abcdefg
-- name: user # 새롭게 추가된 user 이미지 설정
+- name: donkey-app
   newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-app
-  newTag: "latest" # 이 태그는 동적으로 설정된 태그나 커밋 SHA로 대체해야 할 수 있습니다.
+  newTag: f91addf3ee3ef32ad21faf9c82f0747fb7dbe5cc
+- name: user
+  newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-app
+  newTag: latest
 
 resources:
 - ../../base
@@ -25,17 +28,16 @@ patches:
     name: demo-frontend
     namespace: default
     version: v1
-- path: user-deployment-patch.yaml # user 디플로이먼트에 대한 패치 파일
+- path: user-deployment-patch.yaml
   target:
     group: apps
-    version: v1
     kind: Deployment
     name: user
     namespace: default
-- path: user-service-patch.yaml # user 서비스에 대한 패치 파일
-  target:
-    group: ""
     version: v1
+- path: user-service-patch.yaml
+  target:
     kind: Service
     name: user-service
     namespace: default
+    version: v1
