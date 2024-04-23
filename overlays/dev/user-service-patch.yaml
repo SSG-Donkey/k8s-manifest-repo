@@ -7,4 +7,5 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/healthcheck-path: "/health" # 이 예시는 health check 경로를 변경하는 경우입니다.
 spec:
-  # 여기서 ports나 다른 서비스의 스펙을 변경하려면 spec 섹션을 추가/수정합니다.
+  selector:
+    app: user
