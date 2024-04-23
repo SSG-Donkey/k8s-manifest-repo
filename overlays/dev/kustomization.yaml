@@ -4,6 +4,9 @@ images:
 - name: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/demo-frontend
   newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/demo-frontend
   newTag: abcdefg
+- name: user # 이 부분을 새로 추가합니다.
+  newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-app
+  newTag: "latest" # 또는 동적으로 설정된 태그
 resources:
 - ../../base
 patches:
@@ -20,4 +23,19 @@ patches:
     version: v1
     kind: Service
     name: demo-frontend
+    namespace: default
+# 여기에 user 서비스에 대한 새로운 패치 파일을 추가합니다.
+- path: user-deployment-patch.yaml # user 디플로이먼트에 대한 패치 파일
+  target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: user
+    namespace: default
+- path: user-service-patch.yaml # user 서비스에 대한 패치 파일
+  target:
+    group: ""
+    version: v1
+    kind: Service
+    name: user-service
     namespace: default
