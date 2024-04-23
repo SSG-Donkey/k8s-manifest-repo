@@ -4,20 +4,22 @@ images:
 - name: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/demo-frontend
   newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/demo-frontend
   newTag: abcdefg
+- name: donkey-app
+  newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-app
+  newTag: c5af31353cca9ea9923ec5649a759c0fddbae63c
 resources:
 - ../../base
 patches:
 - path: front-deployment-patch.yaml
   target:
     group: apps
-    version: v1
     kind: Deployment
     name: demo-frontend
     namespace: default
+    version: v1
 - path: front-service-patch.yaml
   target:
-    group: ""
-    version: v1
     kind: Service
     name: demo-frontend
     namespace: default
+    version: v1
