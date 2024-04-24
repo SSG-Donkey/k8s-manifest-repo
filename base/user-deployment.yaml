@@ -8,13 +8,19 @@ spec:
   selector:
     matchLabels:
       app: user
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  revisionHistoryLimit: 0
   template:
     metadata:
       labels:
         app: user
     spec:
       containers:
-        - name: user
-          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-user:20240424141053
-          ports:
-            - containerPort: 8080
+      - name: user
+        image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-user:20240424141053
+        ports:
+        - containerPort: 8080
