@@ -4,6 +4,9 @@ images:
 - name: demo-frontend
   newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/demo-frontend
   newTag: abcdefg
+- name: demo-testrepo/my-spring-app
+  newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/demo-testrepo/my-spring-app
+  newTag: 4bc074f5e7273b31edc911fef9eaef5af19f76d9
 - name: donkey-app
   newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-app
   newTag: f91addf3ee3ef32ad21faf9c82f0747fb7dbe5cc
