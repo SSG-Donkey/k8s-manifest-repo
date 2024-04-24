@@ -3,3 +3,7 @@ kind: Kustomization
 resources:
   - frontend-deployment.yaml
   - frontend-service.yaml
+  - module1-deployment.yaml
+  - module1-service.yaml
+  - module2-deployment.yaml
+  - module2-service.yaml
