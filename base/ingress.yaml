@@ -26,19 +26,12 @@ spec:
           service:
             name: "front"
             port:
-              number: 8080
-      - path: /module1
+              number: 8080      
+      - path: /user
         pathType: Prefix
         backend:
           service:
-            name: "module1"
-            port:
-              number: 8080
-      - path: /module2
-        pathType: Prefix
-        backend:
-          service:
-            name: "module2"
+            name: "user"
             port:
               number: 8080
       - path: /api_post
