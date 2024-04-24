@@ -41,6 +41,13 @@ spec:
             name: "module2"
             port:
               number: 8080
+      - path: /api_post
+        pathType: Prefix
+        backend:
+          service:
+            name: "board"
+            port:
+              number: 8080
   - host: www.dangnagwi.store
     http:
       paths:
