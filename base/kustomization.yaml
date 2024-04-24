@@ -11,7 +11,3 @@ resources:
 - board-service.yaml
 - user-deployment.yaml
 - user-service.yaml
-images:
-- name: donkey-user
-  newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-user
-  newTag: "20240424115648"
