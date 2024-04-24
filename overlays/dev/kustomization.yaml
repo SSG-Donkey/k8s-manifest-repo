@@ -44,3 +44,16 @@ patches:
     name: user-service
     namespace: default
     version: v1
+- path: board-deployment-patch.yaml
+  target:
+    group: apps
+    kind: Deployment
+    name: board-deploymnet
+    namespace: default
+    version: v1
+- path: board-service-patch.yaml
+  target:
+    kind: Service
+    name: board-service
+    namespace: default
+    version: v1
