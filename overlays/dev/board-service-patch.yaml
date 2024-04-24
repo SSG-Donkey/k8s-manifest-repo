@@ -4,5 +4,5 @@ metadata:
   name: board
 spec:
   ports:
-    - port: 8000
-      targetPort: 8000
+    - port: 8080
+      targetPort: 8080
