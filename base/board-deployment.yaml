@@ -18,4 +18,4 @@ spec:
           image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-board:20240424134620
           imagePullPolicy: Always
           ports:
-            - containerPort: 8000
+            - containerPort: 8080
