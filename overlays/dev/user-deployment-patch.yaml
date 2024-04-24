@@ -2,20 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user
+  namespace: default
 spec:
   template:
     spec:
       containers:
-      - name: user
-        # 환경 변수를 추가하는 패치
-        env:
-        - name: ENV_VAR_NAME
-          value: "value"
-        # 리소스 요구사항 및 제한을 설정하는 패치
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        - name: user
+          ports:
+            - containerPort: 8080
