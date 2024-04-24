@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: module2
-          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/msa-test:msa_module2
+          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/msa-test:msa_module2-2
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
