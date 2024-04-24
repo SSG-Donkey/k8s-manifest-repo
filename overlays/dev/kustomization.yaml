@@ -6,7 +6,7 @@ images:
   newTag: abcdefg
 - name: demo-testrepo/my-spring-app
   newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/demo-testrepo/my-spring-app
-  newTag: a1203ec82d144ec2777cf48586c487c2854fd119
+  newTag: 234c1f9e1b9c9e7420ea6394fe46b0f565c1a2a4
 - name: donkey-app
   newName: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-app
   newTag: f91addf3ee3ef32ad21faf9c82f0747fb7dbe5cc
