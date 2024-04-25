@@ -41,6 +41,13 @@ spec:
             name: "board"
             port:
               number: 8080
+      - path: /comment
+        pathType: Prefix
+        backend:
+          service:
+            name: "board"
+            port:
+              number: 8080
       - path: /payment
         pathType: Prefix
         backend:
