@@ -9,3 +9,5 @@ resources:
 - user-service.yaml
 - payment-deployment.yaml
 - payment-service.yaml
+- test-deployment.yaml
+- test-service.yaml
