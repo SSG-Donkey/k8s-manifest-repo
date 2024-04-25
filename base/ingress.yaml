@@ -41,6 +41,13 @@ spec:
             name: "board"
             port:
               number: 8080
+      - path: /payment
+        pathType: Prefix
+        backend:
+          service:
+            name: "payment"
+            port:
+              number: 8080
   - host: www.dangnagwi.store
     http:
       paths:
