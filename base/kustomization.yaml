@@ -7,3 +7,5 @@ resources:
 - board-service.yaml
 - user-deployment.yaml
 - user-service.yaml
+- payment-deployment.yaml
+- payment-service.yaml
