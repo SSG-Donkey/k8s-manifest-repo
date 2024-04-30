@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: front
-          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-frontend:20240429212820
+          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-frontend:20240430091518
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
