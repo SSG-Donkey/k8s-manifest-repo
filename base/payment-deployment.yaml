@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: payment
-          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-payment:20240502133156
+          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-payment:20240502153312
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
