@@ -17,14 +17,14 @@ variable "app_subnet" {
 variable "azs" {
   type        = list(string)
   description = "Availability Zones"
-  default     = ["ap-northeast-1a", "ap-northeast-1c", "ap-northeast-1d"]
+  default     = ["ap-northeast-2a", "ap-northeast-2c", "ap-northeast-2d"] //서울
 }
 
 # 6. Region
 variable "region" { 
   description = "AWS region" 
   type        = string 
-  default     = "ap-northeast-1"  //도쿄
+  default     = "ap-northeast-2"  //서울
 }
 
 
