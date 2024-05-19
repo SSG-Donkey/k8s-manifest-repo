@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: board
-          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-board:20240519220851
+          image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-board:20240519221753
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
