@@ -14,7 +14,7 @@ provider "aws" {
 
 provider "kubernetes" {
   config_path    = "~/.kube/config"
-  config_context = "arn:aws:eks:ap-northeast-1:227250033304:cluster/terraform-eks-donkey"
+  config_context = "arn:aws:eks:ap-northeast-2:227250033304:cluster/terraform-eks-donkey"
 }
 
 provider "helm" {
