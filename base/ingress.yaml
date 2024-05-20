@@ -48,7 +48,7 @@ spec:
             name: "user"
             port:
               number: 8080
-      - path: /loginForm
+      - path: /oauth2/callback
         pathType: Prefix
         backend:
           service:
