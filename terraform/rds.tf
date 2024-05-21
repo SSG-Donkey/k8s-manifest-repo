@@ -31,27 +31,3 @@ resource "aws_db_instance" "donkey_rds" {
   }
 }
 
-# 옵셔널: RDS 인스턴스를 위한 보안 그룹이 필요한 경우
-resource "aws_security_group" "rds_sg" {
-  name        = "RDS-Security-Group"
-  description = "Security group for RDS instances"
-  vpc_id      = aws_vpc.project_vpc.id
-
-  ingress {
-    from_port   = 3306
-    to_port     = 3306
-    protocol    = "tcp"
-    security_groups = [aws_security_group.private_sg.id]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "RDS Security Group"
-  }
-}
