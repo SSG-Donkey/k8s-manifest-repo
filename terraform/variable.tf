@@ -13,14 +13,21 @@ variable "app_subnet" {
   default     = ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"]
 }
 
-# 3. Available Zone
+# 3. DB Subnets
+variable "db_subnet" {
+  type        = list(string)
+  description = "Private Subnet CIDR Values for DB"
+  default     = ["10.0.111.0/24", "10.0.112.0/24", "10.0.113.0/24"]
+}
+
+# 4. Available Zone
 variable "azs" {
   type        = list(string)
   description = "Availability Zones"
   default     = ["ap-northeast-2a", "ap-northeast-2c", "ap-northeast-2d"] //서울
 }
 
-# 6. Region
+# 5. Region
 variable "region" { 
   description = "AWS region" 
   type        = string 
