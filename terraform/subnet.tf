@@ -22,3 +22,16 @@ resource "aws_subnet" "app" {
     "kubernetes.io/role/internal-elb" = "1"
   }
 }
+
+################## 3. db Subnet ####################
+# DB 전용 서브넷 생성
+resource "aws_subnet" "db_subnet" {
+  count             = length(var.db_subnet)
+  vpc_id            = aws_vpc.project_vpc.id
+  cidr_block        = element(var.db_subnet, count.index)
+  availability_zone = element(var.azs, count.index)
+
+  tags = {
+    Name = "project_DB-Subnet-0${count.index + 1}"
+  }
+}
