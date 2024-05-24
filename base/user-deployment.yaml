@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
       - name: user
-        image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-user:20240524162032
+        image: 227250033304.dkr.ecr.ap-northeast-2.amazonaws.com/donkey-user:20240524163025
         ports:
         - containerPort: 8080
