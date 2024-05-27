@@ -34,27 +34,20 @@ spec:
             name: "user"
             port:
               number: 8080
-      - path: /oauth2
-        pathType: Prefix
-        backend:
-          service:
-            name: "user"
-            port:
-              number: 8080     
-      - path: /login
-        pathType: Prefix
-        backend:
-          service:
-            name: "user"
-            port:
-              number: 8080
-      - path: /oauth2/callback
-        pathType: Prefix
-        backend:
-          service:
-            name: "user"
-            port:
-              number: 8080                 
+      # - path: /oauth2
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: "user"
+      #       port:
+      #         number: 8080     
+      # - path: /login
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: "user"
+      #       port:
+      #         number: 8080                     
       - path: /api_post
         pathType: Prefix
         backend:
