@@ -4,7 +4,7 @@
 ## argoCD 
 - argocd-ingress.yaml
 - argocd-svc.yaml
-- 
+
 ## kustomization (YAML 파일의 변경 사항을 감지하여 Kubernetes 클러스터에 적용할 수 있는 설정 파일을 생성)
 - kustomization.yaml
 
