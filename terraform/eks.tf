@@ -52,6 +52,6 @@ resource "null_resource" "update_kubeconfig" {
   depends_on = [aws_eks_cluster.my_cluster]
 
   provisioner "local-exec" {
-    command = "aws eks update-kubeconfig --region ap-northeast-1 --name terraform-eks-donkey"
+    command = "aws eks update-kubeconfig --region ap-northeast-2 --name terraform-eks-donkey"
   }
 }
